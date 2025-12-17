@@ -1,0 +1,597 @@
+/* Globális beállítások */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #FF690A; /* Narancs/Piros */
+    --secondary-color: #251A66; /* Mély Lilla/Kék */
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --background-dark: #251A66; /* A fő, lila háttér */
+}
+/* fonts */
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    width: 430px; /* A kért fix szélesség */
+    margin: 0 auto; /* Középre igazítás, ha nagyobb nézetben van */
+    overflow-x: hidden; /* Megakadályozza a horizontális görgetést */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 1. HEADER ÉS HÁTTÉRKÉP */
+.hero-section {
+    /* A kért méret: 430x932 (ez függ a tartalomtól, a kép csak háttér) */
+    height: 932px;
+    width: 430px; /* Helyettesítsd a valós képpel! */
+    background-size: cover;
+    background-position: center top; /* Fontos, hogy a felső részt mutassa */
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 20px;
+    z-index: 0; 
+}
+
+.navbar {
+    background-color: #FF690A;
+    color: #251A66;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: normal;
+    margin-top: -20px; /* Hogy a navbar a kép tetején legyen */
+}
+
+.header-title {
+    font-weight: 400;
+    font-family: "Anton", sans-serif;
+    font-size: 20px;
+    color: #251A66;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #251A66;
+    font-size: 35px;
+    cursor: pointer;
+}
+.hero-section .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 430px;
+    height: 932px; /* ensure the image fills the intended phone background */
+    background-size: cover; /* fills the area while preserving aspect ratio */
+    background-position: center top;
+    z-index: 0; /* sits behind content */
+    pointer-events: none; /* allow interaction with foreground elements */
+}
+.hero-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 100px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2; /* Hogy a kép fölött legyen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.hero-content h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    font-family: "Anton", sans-serif;
+    color: #ffffff;
+    text-shadow: #251A66 2px 2px 4px;
+    z-index: 2;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+
+}
+.hero-content h2 {
+    font-size: 80px;
+    margin-bottom: 70px;
+    line-height: 1.3;
+    font-family: "Anton", sans-serif;
+    color: #FF690A;
+    z-index: 2;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.hero-content p {
+    font-size: 15px;
+    line-height: 1.3;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FŐ TARTALOM SZEKCIÓK */
+main section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* 2. IDŐVONAL */
+.timeline-intro {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin-top: 60px;
+}
+
+.timeline-images {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    padding: 10px 10px;
+}
+
+.timeline-item {
+    width: 50%;
+}
+
+.timeline-item img {
+    object-fit: cover;
+    height: 170px; /* Az arány megőrzése a mockup alapján */
+    width: 100%;
+}
+
+.before {
+    display: block;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-family: "Anton", sans-serif;
+    color: var(--primary-color);
+}
+.after {
+    display: block;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-family: "Anton", sans-serif;
+    color: var(--primary-color);
+}
+/* 3. WATER LILIES SZEKCIÓ */
+.water-lilies-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 40px;
+    font-family: "Anton", sans-serif;
+    margin-top: -30px;
+}
+
+.water-lilies-section p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+.process-images {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.process-images {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    padding: 10px 10px;
+}
+
+/* 4. DID YOU KNOW? */
+.did-you-know {
+    background-color: var(--primary-color);
+    margin-top: 20px;
+    padding: 18px 16px;
+    border-radius: 20px;
+    max-height: 267px;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.did-you-know h3 {
+    font-size: 35px;
+    margin-bottom: 6px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+.funfact-image {
+    margin: 12px 12px;
+    max-height: 120px;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    margin-top: 5px;
+}
+.did-you-know p {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 15px;
+}
+
+/* 5. TÉRKÉP KÉP */
+.map-section {
+    padding: 0 20px 30px;
+}
+
+.map-section img {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 356px;
+    height: 222px;
+    object-fit: cover;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+
+/* 6. VÉLEMÉNYEK (REVIEWS) SZEKCIÓ */
+.reviews-section {
+    background-color: var(--secondary-color);
+    padding: 30px 0; /* A tartalom beljebb van, de a szekció teljes széles */
+}
+
+.reviews-section h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: "Anton", sans-serif;
+    color: #FF690A;
+    margin-top: -20px;
+}
+
+.reviews-prompt {
+    font-size: 15px;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: -10px;
+}
+
+.reviews-slider-container {
+    overflow-x: auto; /* A vízszintes görgetés engedélyezése */
+    padding: 20px 20px 15px 20px; /* Bal oldali padding, hogy ne tapadjon a szélhez */
+    -webkit-overflow-scrolling: touch; /* Jobb görgetési élmény mobilon */
+    /* Görgetősáv elrejtése - csak esztétika miatt */
+    scrollbar-width: none; /* Firefox */
+    background-color: var(--primary-color);
+}
+
+.reviews-slider-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.reviews-slider {
+    display: flex;
+    gap: 15px;
+    width: max-content; /* Fontos, hogy a kártyák túlnyúljanak a containeren */
+}
+
+.review-card {
+    background-color: var(--background-dark);
+    border-radius: 15px;
+    padding: 15px;
+    width: 163px; /* A kártya szélessége */
+    height: 95px; /* A kártya magassága */
+    flex-shrink: 0; /* Megakadályozza a kártyák összenyomását */
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.review-card p {
+    font-size: 7px;
+    margin-bottom: 5px;
+}
+
+.reviewer {
+    display: block;
+    text-align: right;
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Vélemény írása */
+.review-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    resize: vertical;
+    min-height: 80px;
+}
+
+.review-form button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.review-form button:hover {
+    background-color: #e57300;
+}
+
+/* 7. AZ ALKOTÓ MÁS MUNKÁI */
+.other-artworks-section {
+    padding-top: 40px;
+}
+
+.other-artworks-section h2 {
+    font-size: 40px;
+    margin-bottom: 5px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-top: -20px;
+}
+.other-artworks-section h3 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-top: -10px;
+}
+.artworks-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.artwork-item {
+    width: 100%;
+    text-align: center;
+}
+
+.artwork-item img {
+    margin-bottom: 10px;
+    height: 170px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.artwork-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.artwork-button:hover {
+    background-color: #e57300;
+}
+/* Desktop (target 1440 x 1024) */
+@media (min-width: 1440px) {
+    body {
+        width: 1440px;
+        min-height: 1024px; /* base canvas height */
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    /* Hero: desktop-specific background that fits the wider canvas */
+    .hero-section {
+        width: 1440px;
+        height: 900px; /* hero height on desktop (page can scroll below) */
+        background-size: cover;
+        background-position: center top;
+        padding-top: 40px;
+    }
+    .hero-section .hero-img {
+        width: 1440px;
+        height: 1024px;
+        background-size: cover;
+        background-position: center top;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 180px 60px 40px;
+        text-align: center;
+    }
+    .hero-content h1, .hero-content h2 {
+        font-size: 140px;
+        line-height: 0.9;
+        margin: 0;
+    }
+    .hero-content h1 {
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    .hero-content h2 {
+        margin-top: 40px;
+    }
+    .hero-content p {
+        font-size: 25px;
+        max-width: 1100px;
+        margin: 20px auto 0;
+        margin-top: 60px;
+    }
+    .before, .after {
+        font-size: 50px;
+    }
+    .timeline-item img {
+        width: 100%;
+        height: 300px;
+        gap: 60px;
+        padding: 10px 60px;
+        height: 450px;
+    }
+    .water-lilies-section h2 {
+        font-size: 60px;
+    }
+    .water-lilies-section p {
+        font-size: 25px;
+        max-width: 1000px;
+        margin: 0 auto 40px;
+    }
+    .process-images {
+        gap: 40px;
+        padding: 10px 60px;
+    }
+    .process-images {
+        width: 100%;
+        padding: 10px 60px;
+        height: 450px;
+    }
+    /* Did-you-know wider */
+    .did-you-know {
+        max-width: 800px;
+        max-height: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 18px;
+    }
+    .did-you-know h3 {
+        font-size: 50px;
+        margin-bottom: 12px;
+    }
+    .funfact-image {
+        max-height: 200px;
+        max-width: 400px;
+        
+    }
+    .did-you-know p {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+    /* Map full width control */
+    .map-section img {
+        width: 1165px;
+        height: 725px;
+        object-fit: cover;
+        height: auto;
+    }
+
+    /* Reviews / other cards scale */
+    .reviews-section h2 {
+        font-size: 80px;
+    }
+    .reviews-prompt {
+        font-size: 25px;
+        margin-top: 0;
+    }
+    .reviews-slider-container {
+        padding: 30px 60px 25px 60px;
+    }
+    .reviews-slider .review-card {
+        width: 300px;
+        height: 223px;
+    }
+    .review-card p {
+        font-size: 15px;
+    }
+    .reviewer {
+        font-size: 18px;
+    }
+    .review-form {
+        padding: 30px 60px;
+        gap: 15px;
+    }
+    .review-form textarea {
+        min-height: 120px;
+    }
+    .review-form button {
+        padding: 15px 20px;
+        font-size: 20px;
+    }
+    .other-artworks-section h2 {
+        font-size: 80px;
+        margin-bottom: 10px;
+    }
+    .other-artworks-section h3 {
+        font-size: 80px;
+        margin-bottom: 40px;
+    }
+    .artworks-container {
+        gap: 40px;
+        padding: 0 60px 80px 60px;
+    }
+    .other-artworks-section .artwork-item img {
+        height: 450px;
+        width: auto;
+        margin-left: 90px;
+    }
+    .artwork-button {
+        font-size: 30px;
+        padding: 12px 20px;
+    }
+    /* minor spacing/typography tweaks */
+    .timeline-intro, .artist-content p {
+        font-size: 25px;
+        line-height: 1.6;
+        margin-top: 200px;
+    }
+}

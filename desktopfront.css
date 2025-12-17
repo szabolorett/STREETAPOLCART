@@ -1,0 +1,487 @@
+/* General Styles / Általános stílusok */
+:root {
+    --primary-purple: #251A66; /* Deep Purple */
+    --secondary-orange: #FF690A; /* Bright Orange */
+    --light-text: #FFFFFF;
+    --dark-text: #251A66;
+    --font-heading: 'Anton', sans-serif; /* Példa: egy vastag, hatásos betűtípus */
+    --font-body: "Poppins", sans-serif;
+}
+/* fonts */
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #251A66; 
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+/* Desktop Container / Asztali konténer (a 430x932 méret) */
+.desktop-container {
+    width: 1440px;
+    height: 1024px;
+    background-color: transparent;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Görgessen, ha a tartalom túllóg */
+    -ms-overflow-style: none; /* IE és Edge */
+    scrollbar-width: none; /* Firefox */
+    position: relative; /* Értesítéshez */
+}
+
+/* Scrollbar rejtése a telefon konténerben */
+.phone-container::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Header / Fejléc */
+.header {
+    background-color: #FF690A;
+    color: #251A66;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.header-title {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: "Anton", sans-serif;
+    align-items: left;
+    text-align: left;
+    margin-left: 5px;
+}
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #251A66;
+    margin-right: 5px;
+}
+
+
+/* ÚJ: Hamburger Menü Stílus */
+.hamburger-menu {
+    position: absolute;
+    top: 0px; /* Közvetlenül a fejléc alatt kezdődik (fejléc magassága kb. 45px) */
+    right: 0;
+    width: 430px; /* A menü szélessége */
+    height: 466px; /*
+    background-color: var(--primary-purple);
+    box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 990; /* A tartalom fölé kerül, de az értesítés alá */
+    
+    /* Kezdeti állapot: Rejtve és áttűnés */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+}
+.header-title-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-title-menu {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: "Anton", sans-serif;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: 10px;
+    color: #FF690A;
+    top: 10px;
+    left: 20px;
+}
+.menu-icon2 {
+    font-size: 30px;
+    cursor: pointer;
+    color: #FF690A;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    margin-right: 5px;
+}
+/* Menü látható állapotban */
+.hamburger-menu.is-open {
+    transform: translateX(0);
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+
+    transition: background-color 0.2s;
+}
+
+.menu-list li a:hover {
+    background-color: #38005c; /* Világosabb háttér rámutatáskor */
+}
+/* Helper Classes / Segédosztályok */
+.section-title-box {
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+/* Hero Section / Fő rész */
+.hero-section {
+    position: relative;
+    height: 932px; /* Állítsa be a magasságot igény szerint */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section .koi-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 430px;
+    height: 932px; /* ensure the image fills the intended phone background */
+    background-size: cover; /* fills the area while preserving aspect ratio */
+    background-position: center top;
+    z-index: 0; /* sits behind content */
+    pointer-events: none; /* allow interaction with foreground elements */
+    margin-top: -100px; /* adjust as needed to position the image */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    color: var(--light-text);
+}
+
+.hero-content h1 {
+    font-size: 80px;
+    margin: 50px 0 0 0;
+    text-align: center;
+    line-height: 0.9;
+    font-family: "Anton", sans-serif;
+    font-weight: normal;
+    color: white;
+    stroke: #251A66;
+    -webkit-text-stroke: 1px #251A66;
+    text-shadow: #FF690A 2px 2px 4px;
+}
+
+.hero-content h2 {
+    color: #FF690A;
+    font-family: "Anton", sans-serif;
+    font-size: 80px;
+    font-weight: normal;
+    margin: 0;
+    text-shadow: #FF690A 2px 2px 4px;   
+    -webkit-text-stroke: 1px #251A66;
+
+}
+
+.explore-btn {
+    background-color: #FFFFFF;
+    color: #251A66;
+    border: none;
+    padding: 10px 30px;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: "Poppins", sans-serif;
+}
+
+.explore-subtitle {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #FF690A;
+    background-color: #251A66;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+/* Tapolca Description / Tapolca leírása */
+.tapolca-description {
+    padding: 10px;
+    text-align: center;
+}
+
+.tapolca-description h3 {
+    font-size: 40px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: #FF690A;
+    margin: 0;
+    margin-top: -30px;
+}
+.tapolca-description h4 {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    color: #FFFFFF;
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+.tapolca-description p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #FFFFFF;
+}
+
+/* The Artist / A művész */
+.the-artist .orange-bg-section {
+    background-color: var(--secondary-orange);
+    color: #251A66;
+    width: 430px;
+    height: 470px;
+}
+
+.the-artist h5 {
+    font-size: 40px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: #251A66;
+    margin: 0;
+    margin-top: -10px;
+}
+
+.the-artist h6 {
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    color: #251A66;
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: 500;
+    margin-top: -10px;
+}
+.artist-content {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.artist-photo {
+    width: 274px;
+    height: 173px;
+    object-fit: cover;
+    margin: -5px auto;
+    display: block;
+    border: 3px solid var(--light-text);
+    margin-top: -10px;
+}
+
+.artist-content p {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #251A66;
+    font-weight: 600;
+}
+
+/* Local Artworks / Helyi műalkotások (Horizontal Slider) */
+.local-artworks {
+    background-color: var(--primary-purple);
+    padding-bottom: 20px;
+}
+
+.local-artworks .section-title-box {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.local-artworks h7 {
+    font-size: 40px;
+    font-weight: 400;
+    color: #FF690A;
+    font-family: "Anton", sans-serif;
+    line-height: 1;
+}
+/* Slider konténer beállítása */
+.artwork-slider-container {
+    overflow-x: scroll; /* Vízszintes görgetés engedélyezése */
+    padding: 0 20px;
+    -webkit-overflow-scrolling: touch; /* Simább görgetés érintőképernyőn */
+    scrollbar-width: none; /* Firefox */
+}
+
+.artwork-slider-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.artwork-slider {
+    display: flex; /* Kártyák egymás mellé rendezése */
+    gap: 20px; /* Térköz a kártyák között */
+    padding-bottom: 15px; /* Hely a görgetéshez, ha szükséges */
+}
+
+.artwork-card {
+    flex-shrink: 0; /* Megakadályozza, hogy a kártyák összemodortosuljanak */
+    width: 149px; /* Fix szélesség a kártyának */
+    height: 210px;
+    background-color: var(--light-text);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.artwork-card img {
+    width: 149px;
+    height: 178px;
+    object-fit: cover;
+    display: block;
+}
+
+.artwork-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.artwork-name {
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--dark-text);
+    text-transform: uppercase;
+}
+
+.bookmark-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-orange);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+.bookmark-btn .fas.fa-bookmark {
+    color: var(--secondary-orange); /* Szín, ha hozzáadva lett */
+}
+
+/* Map Section / Térkép rész */
+.map-section {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.map-image {
+    width: calc(100% - 40px);
+    max-width: 356px;
+    height: auto;
+    border: 1px solid #FF690A;
+}
+
+/* Bucket List / Bakancslista */
+.bucket-list-section h8 {
+    font-size: 40px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin: 0;
+    margin-top: -10px;
+    text-align: center;
+    margin-right: 10px;
+}
+.bucket-list-section h9 {
+    font-size: 40px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    color: #FF690A;
+    margin: 0;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.bucket-list-section {
+    background-color: var(--primary-purple);
+    padding: 20px;
+}
+
+.bucket-list-items {
+    margin-top: 15px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e004d; /* Sötétebb lila */
+    color: var(--light-text);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.item-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.item-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.like-btn, .remove-btn {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.like-btn .fas.fa-heart {
+    color: var(--secondary-orange); /* Szín, ha "lájkolva" van */
+}
+
+/* Notification / Értesítés */
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FF690A;
+    color: #251A66;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Lehetővé teszi az alatta lévő elemekkel való interakciót */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.notification.show {
+    opacity: 1;
+}
+
+/* Rejtett elem a kezdeti placeholder elrejtéséhez */
+.list-item.hidden {
+    display: none;
+}
