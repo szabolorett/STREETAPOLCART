@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         menuToggle.classList.toggle('active');
-        menuToggle.myFuncti
+        menuToggle.myFunction = !menuToggle.myFunction; // Példa egyedi állapot kezelésére
     });
 
     // 2. Vízszintes görgetés (Reviews slider)
